@@ -64,7 +64,7 @@ MODULE_LICENSE("GPLv2");
 
 #define DT2W_PWRKEY_DUR		0
 #define DT2W_FEATHER		200
-#define DT2W_TIME		700
+#define DT2W_TIME		200
 
 /* Resources */
 int dt2w_switch = DT2W_DEFAULT;
@@ -336,18 +336,15 @@ static int lcd_notifier_callback(struct notifier_block *this,
 	default:
 		break;
 	}
-
 	return 0;
 }
 #else
 static void dt2w_early_suspend(struct early_suspend *h) {
 	scr_suspended = true;
 }
-
 static void dt2w_late_resume(struct early_suspend *h) {
 	scr_suspended = false;
 }
-
 static struct early_suspend dt2w_early_suspend_handler = {
 	.level = EARLY_SUSPEND_LEVEL_BLANK_SCREEN,
 	.suspend = dt2w_early_suspend,
