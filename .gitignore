@@ -47,6 +47,7 @@ modules.builtin
 /compare
 /copyzip.sh
 /makeboot.sh
+/makeboot2.sh
 /modules.sh
 /patch
 
