@@ -3371,7 +3371,7 @@ struct msm_bus_scale_pdata grp2d1_bus_scale_pdata = {
 };
 #endif
 
-static struct resource kgsl_3d0_resources[] = {
+static struct resource kgsl_3d0_resources_8960[] = {
 	{
 		.name = KGSL_3D0_REG_MEMORY,
 		.start = 0x04300000, /* GFX3D address */
@@ -3460,8 +3460,8 @@ static struct kgsl_device_platform_data kgsl_3d0_pdata = {
 struct platform_device msm_kgsl_3d0 = {
 	.name = "kgsl-3d0",
 	.id = 0,
-	.num_resources = ARRAY_SIZE(kgsl_3d0_resources),
-	.resource = kgsl_3d0_resources,
+	.num_resources = ARRAY_SIZE(kgsl_3d0_resources_8960),
+	.resource = kgsl_3d0_resources_8960,
 	.dev = {
 		.platform_data = &kgsl_3d0_pdata,
 	},
